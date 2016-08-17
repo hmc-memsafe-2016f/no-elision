@@ -1,0 +1,7 @@
+[package]
+name = "no-elision"
+version = "0.1.0"
+authors = ["Alex Ozdemir <aozdemir@hmc.edu>"]
+
+[dev-dependencies]
+compiletest_rs = "*"
