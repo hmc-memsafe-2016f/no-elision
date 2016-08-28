@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["Alex Ozdemir <aozdemir@hmc.edu>"]
 
 [dev-dependencies]
-compiletest_rs = "*"
+compiletest_rs = "0.2.1"

@@ -125,13 +125,13 @@ impl<'v, 't> RefVisitor<'v, 't> {
                         Def::TyAlias(def_id) |
                         Def::Struct(def_id) => {
                             let type_scheme = self.tcx.lookup_item_type(def_id);
-                            for _ in type_scheme.generics.regions.as_slice() {
+                            if type_scheme.generics.regions.as_slice().len() > 0 {
                                 self.session.span_err(path.span, ERROR_MSG);
                             }
                         }
                         Def::Trait(def_id) => {
                             let trait_def = self.tcx.trait_defs.borrow()[&def_id];
-                            for _ in &trait_def.generics.regions {
+                            if trait_def.generics.regions.as_slice().len() > 0 {
                                 self.session.span_err(path.span, ERROR_MSG);
                             }
                         }
